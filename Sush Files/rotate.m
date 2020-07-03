@@ -39,5 +39,5 @@ fclose(fileID);
 readID = fopen('nine.bin');
 coordinates = (fread(readID, [3 numRows/3]))'
 
-topoPT = pointCloud(coordinates)
+ptCloud = pointCloud(coordinates)
 % pcshow(topoPT)
