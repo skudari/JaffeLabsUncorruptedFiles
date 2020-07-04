@@ -3,7 +3,6 @@
 function [depth_and_ssp] = get_ENV_data(CTD_num)
 CTD01 = ncread('SAVEX15_CTD.nc', CTD_num);
 
-
 long = CTD01(:,2); lat = CTD01(:,3);
 pressure = CTD01(:,4)/10; %kPa
 temp = CTD01(:,5); %C

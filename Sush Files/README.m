@@ -57,10 +57,14 @@
 %% HOW TO RUN 
 %
 % 1. Add all files and subfiles in at 2 folder to path 
-% 2. Navigate to at 2/tests/wedge/Sush Files
-% 3. bellhop ECS.env -- will produce a shade and print file 
+% 2. Navigate to at 2/tests/wedge/Sush Files/ENV Folder
+% 3. Run get_ENV_data(<CTD FILE>)
+% 4. Copy and paste the ouput ssp and depth into the .env file template and
+%       adjust the required settings
+% 3. bellhop <CTD FILE>.env -- will produce a shade and print file 
 %   If all the runs are correct, the print file should show no errors
-% 4. Run CTD_UCTD.m -- should produce a 3D point cloud
+% 4. Run CTD_UCTD.m -- should produce 26 3D point cloud images for their
+% respective CTD arrays
 %   To save time avoid re-runing, use the exiting .env file and just run
 % step 4. 
 % 
