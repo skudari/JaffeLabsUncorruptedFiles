@@ -2,51 +2,56 @@
 %FILE DIRECTORY 
 %
 % ENV Directory:
-%       % CTD01.env + .prt + .shd
-%       % CTD02.env + .prt + .shd
-%       % CTD03.env + .prt + .shd
-%       % CTD04.env + .prt + .shd
-%       % CTD05.env + .prt + .shd
-%       % CTD06.env + .prt + .shd
-%       % CTD07.end + .prt + .shd
-%       % CTD08.end + .prt + .shd
-%       % CTD09.end + .prt + .shd
-%       % CTD10.end + .prt + .shd
-%       % CTD11.env + .prt + .shd
-%       % CTD12.env + .prt + .shd
-%       % CTD13.env + .prt + .shd
-%       % CTD14.env + .prt + .shd
-%       % CTD15.env + .prt + .shd
-%       % CTD16.env + .prt + .shd
-%       % CTD17.end + .prt + .shd
-%       % CTD18.end + .prt + .shd
-%       % CTD19.end + .prt + .shd
-%       % CTD20.end + .prt + .shd
-%       % CTD21.env + .prt + .shd
-%       % CTD22.env + .prt + .shd
-%       % CTD23.env + .prt + .shd
-%       % CTD24.env + .prt + .shd
-%       % CTD25.env + .prt + .shd
-%       % CTD26.env + .prt + .shd
-%
+%       % bottomBathymetry -- an averaged flat bottom bathymetry for the
+%           East China Sea
+%       % CTD01.env + .prt + .shd +.ply
+%       % CTD02.env + .prt + .shd +.ply
+%       % CTD03.env + .prt + .shd +.ply
+%       % CTD04.env + .prt + .shd +.ply
+%       % CTD05.env + .prt + .shd +.ply
+%       % CTD06.env + .prt + .shd +.ply
+%       % CTD07.end + .prt + .shd +.ply
+%       % CTD08.end + .prt + .shd +.ply
+%       % CTD09.end + .prt + .shd +.ply
+%       % CTD10.end + .prt + .shd +.ply
+%       % CTD11.env + .prt + .shd +.ply
+%       % CTD12.env + .prt + .shd +.ply
+%       % CTD13.env + .prt + .shd +.ply
+%       % CTD14.env + .prt + .shd +.ply
+%       % CTD15.env + .prt + .shd +.ply
+%       % CTD16.env + .prt + .shd +.ply
+%       % CTD17.end + .prt + .shd +.ply
+%       % CTD18.end + .prt + .shd +.ply
+%       % CTD19.end + .prt + .shd +.ply
+%       % CTD20.end + .prt + .shd +.ply
+%       % CTD21.env + .prt + .shd +.ply
+%       % CTD22.env + .prt + .shd +.ply
+%       % CTD23.env + .prt + .shd +.ply
+%       % CTD24.env + .prt + .shd +.ply
+%       % CTD25.env + .prt + .shd +.ply
+%       % CTD26.env + .prt + .shd +.ply
+%       % 
+%       % NOTE: .ply are the point cloud objects of only the pressureCloud
+%           all are scaled by  x = 504000 y = 7038881
+%       %
+%       % CTD_UCTD.m -- runs CTD information for all 26 arrays and
+%       generates .ply files
+%       % template.env + .prt + .shd -- sample env template and the outcome
+%           shade and print file (can be copied and changed)
 %
 % addColor.m - function takes in a (n x 3) x y z matrix and adds color by
 %              normalizing by the z value
 %
 % c_water.m - calculates sound speed (in m/s) of seawater given T (°C), P (kPa)
-%
-% CTD_UCTD.m - Will plot topograph and sounds speed, for now plots East
-%              China Sea CTD data on a flat bottom
 %               
 % deg2utm.m - convert lat/lon vectors into UTM coordinates 
 %
 % Depth.m - Computes depth given the pressure at some latitude
 %
-% EastChinaSea.m -
-%
-% ECS.shd - shade file used for pressure coordinates in CTD_UCTD.m
-%
 % get_ENV_data.M -- calculates the depth and ssp for any given CTD item 
+%
+% get_pressure_points_from_figure -- takes in a figure and calculates
+%                                       pressure gradient
 %
 % rotate.m - takes two points and rotates them in  360 degree cylinder
 %
@@ -54,6 +59,8 @@
 %
 % submrine.m - generates a elleptical sphere to represent a submarine
 %
+% test.bin -- file that is written to from CTD_UCTD.m, contains the rotated
+%           pressure points (heavy memory and space usage script)
 %% HOW TO RUN 
 %
 % 1. Add all files and subfiles in at 2 folder to path 
