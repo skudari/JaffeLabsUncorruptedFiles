@@ -72,6 +72,7 @@
 %   If all the runs are correct, the print file should show no errors
 % 4. Run CTD_UCTD.m -- should produce 26 3D point cloud images for their
 % respective CTD arrays
+%       %   If you uncomment rotate(pointCloud)
 %   To save time avoid re-runing, use the exiting .env file and just run
 % step 4. 
 % 
